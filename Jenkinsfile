@@ -12,14 +12,14 @@ pipeline{
    }
    {
     
-	 stage {'testing test'}{
+	 stage {'testing stage'}{
 	 
 	     steps{
-         withMaven(maven: 'Local Maven') 
+                 withMaven(maven: 'Local Maven') 
 		 {
                    sh 'mvn test'
-         }
-          }
+                 }
+                  }
 
    }
          }
