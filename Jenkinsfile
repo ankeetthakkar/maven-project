@@ -15,12 +15,22 @@ pipeline{
 	 stage ('testing stage'){
 	 
 	     steps{
-                 withMaven(maven: 'Local Maven') 
-		 {
-                   sh 'mvn test'
-                 }
-                  }
+              withMaven(maven: 'Local Maven') 
+		     {
+               sh 'mvn test'
+             }
+              }
 
    }
-         }
+   
+   {
+     stage ('Testing package'){
+	    
+		steps{
+		   withMaven(maven: 'Local Maven')
+		   {
+			 sh 'mvn package'
+		   }
+		     {
+       }
           }
