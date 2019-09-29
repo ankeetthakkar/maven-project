@@ -11,28 +11,26 @@ pipeline{
 
    }
    {
-    
-	 stage ('testing stage'){
+     stage ('testing stage'){
 	 
 	     steps{
               withMaven(maven: 'Local Maven') 
-		     {
-               sh 'mvn test'
-             }
+					{
+						sh 'mvn test'
+					}
               }
-
+         }
    }
-   {
-    
-	 stage ('testing package'){
-	 
-	     steps{
-              withMaven(maven: 'Local Maven') 
-		     {
-               sh 'mvn package'
-             }
-              }
+		{
+			stage ('testing package'){
+				steps{
+					withMaven(maven: 'Local Maven') 
+						{
+							sh 'mvn package'
+						}
+					}
 
-   }
-       }
-          }
+					}
+		}
+	}
+	       
