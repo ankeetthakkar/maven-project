@@ -22,17 +22,17 @@ pipeline{
               }
 
    }
-   
    {
-     stage ('testing package'){
-	    
-		steps{
-		   withMaven(maven: 'Local Maven')
-		   {
-			 sh 'mvn package'
-		   }
-		     }
+    
+	 stage ('testing package'){
+	 
+	     steps{
+              withMaven(maven: 'Local Maven') 
+		     {
+               sh 'mvn package'
+             }
+              }
+
+   }
        }
           }
-	        }
-}
