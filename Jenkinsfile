@@ -32,5 +32,16 @@ pipeline{
 
 					}
 		}
+	    {
+			stage ('testing install'){
+				steps{
+					withMaven(maven: 'Local Maven') 
+						{
+							sh 'mvn install'
+						}
+					} 
+
+					}
+		}
 	}
 	       
