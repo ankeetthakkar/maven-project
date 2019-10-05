@@ -48,12 +48,12 @@ pipeline{
 		{
 		    stage ('testing deploy'){
 			    steps{
-				   {
+				   
 				    sshagent({'172.31.45.234'})
 					    {
 						    sh 'scp -o StrictHostKeyChecking=no */target/*war ec2-user@:172.31.45.234 /var/lib/tomcat/webapps'
 					    }
-				    }
+				    
 				     }
                 }				
 	}
