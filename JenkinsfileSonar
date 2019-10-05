@@ -35,11 +35,11 @@ pipeline{
 	    {
 			stage ('testing install'){
 				steps{
-				   withsonarQubeEnv(sonar)
+				   withSonarQubeEnv(sonar)
 				   {
 					withMaven(maven: 'Local Maven') 
 						{
-							sh 'mvn install'
+							sh 'mvn install sonar:sonar'
 						}
 					} 
                      }
