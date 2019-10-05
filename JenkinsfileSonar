@@ -45,6 +45,7 @@ pipeline{
                      }
 					
 		}
+		}
 		{
 		    stage ('testing deploy'){
 			    steps{
@@ -56,5 +57,4 @@ pipeline{
 				     }
                 }				
 	}
-}
 }
