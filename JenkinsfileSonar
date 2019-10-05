@@ -5,7 +5,7 @@ pipeline{
    stages
    {
 
-     stage "scm checkout"{
+     stage ("scm checkout"){
      git 'https://github.com/ankeetthakkar/maven-project.git'
      }
 
@@ -53,7 +53,6 @@ pipeline{
 					    {
 						    sh 'scp -o StrictHostKeyChecking=no */target/*.war ec2-user@172.31.45.234:/var/lib/tomcat/webapps'
 					    }
-				    
 				     }
                 }				
 	}
