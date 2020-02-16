@@ -1,25 +1,34 @@
 pipeline
 {
-   agent any
-   stages
-   {
-    stage('scm checkout')
-	{
-	  steps
-	  {
-   	   git branch: 'master', url: 'https://github.com/ankeetthakkar/maven-project.git'
-	  }
-	
-	}
-	 
-stage('validate code')
-{
-
-  steps
+  agent any
+  stages
   {
-    withMaven(jdk: 'jdk', maven: 'local maven') {
+   stage('scm checkout')
+   {
+     steps
+	 {
+	   git branch: 'master', url: 'https://github.com/ankeetthakkar/maven-project.git'
+	 }
+   }
+   
+   stage('validate code')
+   {
+     steps
+	 {
+	  withMaven(jdk: 'jdk', maven: 'local maven') {
     sh 'mvn validate'
+     }
+	 }
+   }
+   
+  stage('compile code')
+  {
+    steps
+	{
+	   withMaven(jdk: 'jdk', maven: 'local maven') {
+     sh 'mvn compile'
+	}
+   }
   }
-  }
-}} 
+ }
 }
