@@ -11,6 +11,15 @@ pipeline
 	  }
 	
 	}
-	  
-   }
+	 
+stage('validate code')
+{
+
+  steps
+  {
+    withMaven(jdk: 'jdk', maven: 'local maven') {
+    sh 'mvn validate'
+  }
+  }
+}} 
 }
