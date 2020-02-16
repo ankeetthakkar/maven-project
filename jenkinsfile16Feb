@@ -16,7 +16,7 @@ pipeline
 	   steps
 	   {
 	     withMaven(jdk: 'jdk', maven: 'local maven') {
-		 sh 'maven validate'}
+		 sh 'mvn validate'}
 	   }
 	 }
 	 
@@ -25,7 +25,7 @@ pipeline
 	   steps
 	   {
 	     withMaven(jdk: 'jdk', maven: 'local maven') {
-		 sh 'maven compile'}
+		 sh 'mvn compile'}
 	   }
 	 }
 	 
@@ -34,7 +34,7 @@ pipeline
 	   steps
 	   {
 	     withMaven(jdk: 'jdk', maven: 'local maven') {
-		 sh 'maven test'}
+		 sh 'mvn test'}
 	   }
 	 }
   
