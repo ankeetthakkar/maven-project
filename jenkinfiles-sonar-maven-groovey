@@ -21,7 +21,7 @@ pipeline
 		{
           withMaven(jdk: 'jdk', maven: 'local maven')
           {
-		 sh 'clean mvn install sonar:sonar'
+		 sh 'cleaninsta ll sonar:sonar'
 	  }}}
 	
 	}
