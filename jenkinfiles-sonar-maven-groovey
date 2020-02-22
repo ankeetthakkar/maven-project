@@ -1,0 +1,30 @@
+Jenkins-SOnar- Groovey
+
+pipeline
+{
+  agent any
+  stages
+  {
+    stage('scm checkout')
+	{
+	  steps
+	  {
+	    git branch: 'master', url: 'https://github.com/ankeetthakkar/maven-project.git'
+	  }
+	}
+	
+	stage('sonar and maven project')
+	{
+	  steps 
+	  {
+	    withSonarQubeEnv(credentialsId: 'mysonar') 
+		{
+          withMaven(jdk: 'jdk', maven: 'local maven')
+          {
+		 sh 'clean mvn install sonar:sonar'
+	  }}}
+	
+	}
+  }
+
+}
