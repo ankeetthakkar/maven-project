@@ -17,7 +17,7 @@ pipeline
 	{
 	  steps 
 	  {
-	    withSonarQubeEnv(credentialsId: 'mysonar') 
+	    withSonarQubeEnv ('mysonar') 
 		{
           withMaven(jdk: 'jdk', maven: 'local maven')
           {
