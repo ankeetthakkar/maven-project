@@ -17,7 +17,7 @@ pipeline
 	{
 	  steps 
 	  {
-	    withSonarQubeEnv ('mysonar') 
+	    withSonarQubeEnv ('sonar for jenkins groovey') 
 		{
           withMaven(jdk: 'jdk', maven: 'local maven')
           {
